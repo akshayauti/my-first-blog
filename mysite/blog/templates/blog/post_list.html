@@ -1,22 +1,36 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
     <title>Ak's Blog</title>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="css/stylesheet" href="{% static 'css/blog.css'%}">
   </head>
   <body>
-    <div>
-        <h1><a href="/">Akshay's  Blog</a></h1>
-    </div>
+  <!-- <div class="container"> -->
 
+    <!-- <nav navbar navbar-default>
+      <div class = "navbar-header"> -->
+        <nav class="navbar navbar-light" style="background-color: #e3f2fd;" >
+          <h1 class = "display-4" ><a href="/">Akshay's  Blog</a></h1>
+
+        </nav>
+      <!-- </div>
+    </nav> -->
+
+
+    <div class="jumbotron">
     {% for post in posts %}
-        <div>
+        <div class = "post">
+            <h2><a href="#">{{ post.title }}</a></h2>
+            <p class = "font-italic">author : {{post.author}}</p>
             <p>created: {{ post.created_date }}</p>
-            <h2><a href="">{{ post.title }}</a></h2>
-            <p>author : {{post.author}}</p>
-            <p>{{ post.text|linebreaksbr }}</p>
+            <p class="text-monospace">{{ post.text|linebreaksbr }}</p>
         </div>
     {% endfor %}
-
+      </div>
+    <!-- </div> -->
   </body>
 </html>
