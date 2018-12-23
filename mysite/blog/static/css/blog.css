@@ -1,7 +1,19 @@
 body{
-  background-color: #F47D63;
+  background-color: #E3C4BE;
+
+}
+.heading{
+  text : yellow;
 }
 
 h1{
   color: red;
+}
+
+footer{
+  background: grey;
+}
+
+.navbar{
+  background-color:blue;
 }
